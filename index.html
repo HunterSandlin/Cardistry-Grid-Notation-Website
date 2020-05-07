@@ -15,8 +15,13 @@
 
   <div class="row">
     <div class="col-sm-4" style="background-color:lavender;">
+
+        <input type="checkbox" class="options" id="singleCard" name="singleCard" value="singleCard">
+        <label for="singleCard">Single card</label><br />
+        <input type="button" value="Generate Packet" id="generatePacket"> <br />
+
       <div class="div_pickup" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <img src="placeholder.png" draggable="true" ondragstart="drag(event)" id="drag1" width="100%">
+        <img src="packets/nullPacket.png" class="generatedPicture" draggable="true" ondragstart="drag(event)" id="drag1" width="100%">
       </div>
     </div>
     <div class="col-sm-8" style="background-color:lavenderblush;">

@@ -1,19 +1,19 @@
 .div_dropbox {
-  float: left;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  border: 1px solid black;
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	border: 1px solid black;
 }
 
 .div_pickup {
-  float: left;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
 }
 
 #grid_item {
-  width: 90px;
-  margin:auto;
+	width: 90px;
+	margin:auto;
 }
