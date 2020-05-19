@@ -23,3 +23,8 @@
 .sidebar {
 	margin: 15px;
 }
+
+.header-logo {
+	height: 30px;
+	width: auto;
+}

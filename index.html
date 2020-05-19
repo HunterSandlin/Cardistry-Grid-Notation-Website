@@ -2,33 +2,22 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <script src="script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 
-  <div class="jumbotron text-center">
-    <h1>Cardistry Grid Notation</h1> 
-  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <span><img src="CGN-logo.png" class="d-inline-block align-top header-logo" alt=""></span>
+      Cardistry Grid Notation Creator
+    </a>
+  </nav>
+
   
   <div class="row">
     <div class="col-sm-4 sidebar" style="background-color:lavender;">
-
-
-
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-      </div>
-
-
-
-
-
 
       <input type="checkbox" class="fingerSelectCheck" id="singleCard" name="singleCard" value="singleCard">
         <label for="singleCard">Single card</label><br />
@@ -49,7 +38,7 @@
 
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownFingerSide" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
+              Select 
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownFingerSide">
               <a class="dropdown-item">Top</a>
@@ -106,7 +95,8 @@
   </div>
 
 
-
-
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
