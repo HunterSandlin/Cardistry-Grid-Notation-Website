@@ -19,12 +19,28 @@
 	margin:auto;
 }
 */
-
-.sidebar {
-	margin: 15px;
+.card {
+	margin: 1.5%;
 }
 
 .header-logo {
 	height: 30px;
 	width: auto;
+}
+
+.option-btns {
+	margin: 3%;
+}
+
+.generate-btn {
+	width: 40%;
+}
+
+.delete-box {
+	float: right;
+	width: 18%
+}
+
+.align-images {
+	display: inline-block;
 }

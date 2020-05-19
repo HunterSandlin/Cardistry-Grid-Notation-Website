@@ -1,18 +1,6 @@
 //function for when the form  to make a box is submitted 
 window.onload = function(){ 
-    document.getElementById("generatePacket").onclick = function(){
-        //get the checkboxes, leave null if none are checked
-        let checkedOptions = document.querySelector(".options:checked") ? 
-            document.querySelector(".options:checked").value : null;
-        //switch case to find the corresponding image
-        switch(checkedOptions) {
-            case "singleCard":
-                document.getElementsByClassName("generatedPicture")[0].src = "packets/singleCard.png"
-              break;
-            default:
-                document.getElementsByClassName("generatedPicture")[0].src = "packets/nullPacket.png"
-          }
-      }
+    //TODO: add elements to canvas as selected by user
 };
 
 

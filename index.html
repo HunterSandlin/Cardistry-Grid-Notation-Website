@@ -3,8 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-</head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <body>
 
 
@@ -14,22 +13,14 @@
       Cardistry Grid Notation Creator
     </a>
   </nav>
-
-  
+  <br />
+  <h1 class="title">Design CGN Sheet</h1>
+  <br />
   <div class="row">
-    <div class="col-sm-4 sidebar" style="background-color:lavender;">
-
-      <input type="checkbox" class="fingerSelectCheck" id="singleCard" name="singleCard" value="singleCard">
-        <label for="singleCard">Single card</label><br />
-        <br />
-
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck1">
-          <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-        </div>
-      
+    <div class="card bg-light design-card" style="width: 30rem;">
+      <div class="card-header">Generate Packet</div>
       <p>
-        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseFingerSelect" aria-expanded="false" aria-controls="collapseExample">
+        <button class="btn btn-info option-btns" type="button" data-toggle="collapse" data-target="#collapseFingerSelect" aria-expanded="false" aria-controls="collapseExample">
           Finger Placement
         </button>
       </p>
@@ -48,55 +39,88 @@
             </div>
           </div>
 
-
-        <input type="checkbox" class="fingerSelectCheck" id="thumbFinger">
-        <label for="thumbFinger">Thumb</label>
-        <input type="checkbox" class="fingerSelectCheck" id="indexFinger">
-        <label for="indexFinger">Index</label>
-        <input type="checkbox" class="fingerSelectCheck" id="middleFinger">
-        <label for="middleFinger">Middle</label>
-        <input type="checkbox" class="fingerSelectCheck" id="ringFinger">
-        <label for="top-ringringFinger">Ring</label>
-        <input type="checkbox" class="fingerSelectCheck" id="pinkyFinger">
-        <label for="pinkyFinger">Pinky</label>
+          <br />
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="thumbFinger">
+          <label class="custom-control-label" for="thumbFinger">Thumb</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="indexFinger">
+          <label class="custom-control-label" for="indexFinger">Index</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="middleFinger">
+          <label class="custom-control-label" for="middleFinger">Middle</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="ringFinger">
+          <label class="custom-control-label" for="top-ringringFinger">Ring</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="pinkyFinger">
+          <label class="custom-control-label" for="pinkyFinger">Pinky</label>
+        </div>
         <br />
 
       </div>
     </div>
         <br />
         <br />
-        <input class="btn btn-primary" type="button" value="Generate Packet" id="generatePacket"> <br />
-
-      <div class="div_pickup" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <img src="packets/nullPacket.png" class="generatedPicture" draggable="true" ondragstart="drag(event)" id="drag1" width="100%">
+        <div class="align-images">
+        <div class="div_pickup" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="packets/nullPacket.png" class="generatedPicture" draggable="true" ondragstart="drag(event)" width="100%">
+        </div>
+        <div class="div_pickup delete-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="packets/delete.png" class="deletePacket" draggable="true" ondragstart="drag(event)" width="100%" alt="Delete packet by dropping here">
+        </div>
       </div>
-    </div>
-    <div class="col-sm-7" style="background-color:lavenderblush;">
-      <div class="row">
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
       </div>
-      <div class="row">
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="card bg-light">
+      <div class="card-header">Sheet</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="row">
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="row">
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="row">
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="row">
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
       </div>
-      <div class="row">
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="div_dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-      </div>
-      
     </div>
   </div>
 
 
   <script src="script.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
