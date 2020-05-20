@@ -13,12 +13,6 @@
 	margin: 10px;
 }
 
-/*
-#grid_item {
-	width: 90px;
-	margin:auto;
-}
-*/
 .card {
 	margin: 1.5%;
 }
@@ -44,3 +38,17 @@
 .align-images {
 	display: inline-block;
 }
+
+hr {
+	width: 70%;
+	align-self: center;
+	top: 20px; 
+	border: none; 
+	height: 12px;
+	background: black; 
+	margin-bottom: 50px; 
+}
+
+.button-box {
+	display: inline-block;
+ }

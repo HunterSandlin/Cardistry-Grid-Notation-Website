@@ -29,4 +29,7 @@ function drop(event) {
     }
     drag.lastPicture.id = '';
 }
-
+ 
+function setPacketSideButton(event) {
+    document.getElementById("packSideSelect").innerText = event.target.innerText;
+}
