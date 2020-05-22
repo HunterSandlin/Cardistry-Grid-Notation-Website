@@ -116,7 +116,8 @@
         <hr>
         <div class="align-images">
         <div class="div_pickup" ondrop="drop(event)" ondragover="allowDrop(event)">
-          <img src="packets/nullPacket.png" class="generatedPicture" draggable="true" ondragstart="drag(event)" width="100%">
+          <!--img src="packets/nullPacket.png" class="generatedPicture" draggable="true" ondragstart="drag(event)" width="100%"-->
+          <canvas id="newPacket" width="100%" height="100%" class="generatedPicture" draggable="true" ondragstart="drag(event)"></canvas>
         </div>
         <div class="div_pickup delete-box" ondrop="drop(event)" ondragover="allowDrop(event)">
           <img src="packets/delete.png" class="deletePacket" draggable="true" ondragstart="drag(event)" width="100%" alt="Delete packet by dropping here">
