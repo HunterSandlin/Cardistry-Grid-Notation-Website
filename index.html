@@ -76,9 +76,18 @@
 
             <!-- section for finger placement-->
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" id="packSideSelect" type="button" id="dropdownFingerSide" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Side of Packet
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownFingerSide" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Top
               </button>
+              <br /> <br />
+              <div class="radio">
+                <label><input type="radio" id="radFingerSideLeft" name="radFingerSide" checked> Left Hand</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" id="radFingerSideRight" name="radFingerSide"> Right Hand</label>
+              </div>
+
+
               <div class="dropdown-menu" aria-labelledby="dropdownFingerSide">
                 <a class="dropdown-item" onclick="setPacketSideButton(event)">Top</a>
                 <a class="dropdown-item" onclick="setPacketSideButton(event)">Left</a>
@@ -89,7 +98,7 @@
             <br />
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="thumbFinger">
-            <label class="custom-control-label" for="thumbFinger">Thumb</label>
+            <label class="custom-control-label" for="thumbFinger" onclick="evt = event">Thumb</label>
           </div>
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="indexFinger">

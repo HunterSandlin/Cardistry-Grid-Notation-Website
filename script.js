@@ -60,7 +60,7 @@ function copyCanvas(oldCanvas) {
 
 //set the dropdown menu for selecting side of packet number
 function setPacketSideButton(event) {
-    document.getElementById("packSideSelect").innerText = event.target.innerText;
+    document.getElementById("dropdownFingerSide").innerText = event.target.innerText;
 }
 
 //adds images to the canvas, pass in the image location as string ex. 'images/foo.png'
@@ -91,4 +91,32 @@ function addNumber(loca, number) {
     }
     //TODO: check if more numbers are selected
     //add acordingly
+}
+
+
+/* Object to hold attributes of canvas.
+    Each button has its own nested object,
+    all possible values are present but false.
+*/
+const canvas_attributes = {
+    //Figner Placement option: numbers on outside of boxes  
+    fingerPlacement: {
+        /* ordered 1-10 based on CGN documentation
+                          left hand                           right hand
+               thumb, index, middle, ring, pinky    thumb, index, middle, ring, pinky  */ 
+        top: [[false, false, false, false, false], [false, false, false, false, false]],
+        bottom: [[false, false, false, false, false], [false, false, false, false, false]],
+        left: [[false, false, false, false, false], [false, false, false, false, false]],
+        right: [[false, false, false, false, false], [false, false, false, false, false]]
+    }
+}
+
+/* Function to update the canvas, heavylifter of code.
+    Goes through each method and sees what to set.    
+*/
+function updateCanvas() {
+    canvas_attributes.fingerPlacement.forEach(
+        
+    );
+
 }
