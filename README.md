@@ -20,8 +20,8 @@ This sheet was written by the CGN creators at [Cardistry Touch](https://www.card
 
 * The letters that look like **SB** represent the starting grip. 
 * Each square inside the grid is a packet of cards. 
- - Number on sides represent fingers.
- - The "flags" are rotations.
+    * Number on sides represent fingers.
+    * The "flags" are rotations.
 * Every packet has it's own column
 * Commas and X's on lines further describe a packet (ex, comma for a packet of a single card).
 * Lines and dots on the left side describe pacing.
