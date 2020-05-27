@@ -1,6 +1,12 @@
 //vars for canvas
 let canvas = document.getElementById('newPacket');
 let context = canvas.getContext('2d');
+context.font = "100px Arial";
+//center line for centering text, used in updateCanvas()
+context.lineWidth = 0;
+context.moveTo(500, 1000);
+context.lineTo(500, 0);
+context.stroke();
 const placement = {
     TOP: 'top',
     BOTTOM: 'bottom',
@@ -8,11 +14,8 @@ const placement = {
     RIGHT: 'right'
 }
 
-
-//function for when the form  to make a box is submitted 
 window.onload = function(){ 
-    //set canvas to default packet
-    addImage('packets/nullPacket.png');
+    this.updateCanvas();
 };
 
 
@@ -31,7 +34,6 @@ let drag = (event) => {
 function drop(event) {
     event.preventDefault();
     let data = event.dataTransfer.getData("text"); 
-    console.log(data.parentNode);
     //if it is coming from the user created packet
     if (drag.lastEvent.className === "div_pickup") {
         let clone = copyCanvas(document.getElementById(data));
@@ -78,22 +80,6 @@ function addImage(imgSrc) {
     };
 }
 
-//adds a number to side of packet, takes placement enum, and a number
-function addNumber(loca, number) {
-    //check to ensure loca and number and a placement enum and number respectively
-    if (Object.values(placement).indexOf(loca) > -1) {
-        console.log('ERROR in addNumber: invalid location (loca). Must be valid placement.');
-        return;
-    }
-    if (typeof number != "number") {
-        console.log('ERROR in addNumber: invalid number.');
-        return;
-    }
-    //TODO: check if more numbers are selected
-    //add acordingly
-}
-
-
 /* Object to hold attributes of canvas.
     Each button has its own nested object,
     all possible values are present but false.
@@ -101,13 +87,11 @@ function addNumber(loca, number) {
 const canvas_attributes = {
     //Figner Placement option: numbers on outside of boxes  
     fingerPlacement: {
-        /* ordered 1-10 based on CGN documentation
-                          left hand                           right hand
-               thumb, index, middle, ring, pinky    thumb, index, middle, ring, pinky  */ 
-        top: [[false, false, false, false, false], [false, false, false, false, false]],
-        bottom: [[false, false, false, false, false], [false, false, false, false, false]],
-        left: [[false, false, false, false, false], [false, false, false, false, false]],
-        right: [[false, false, false, false, false], [false, false, false, false, false]]
+        //each includes array of numbers (each finger is assigned a number via CGN doc)
+        top: [],
+        bottom: [],
+        left: [],
+        right: []
     }
 }
 
@@ -115,8 +99,81 @@ const canvas_attributes = {
     Goes through each method and sees what to set.    
 */
 function updateCanvas() {
-    canvas_attributes.fingerPlacement.forEach(
-        
+    //clear the canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);
+/* UPDATE FINGER PLACEMENT */
+    //top
+    //top and bottom are just centered on invisible line running down center 
+    let tempString = '';
+    canvas_attributes.fingerPlacement.top.sort().forEach( num =>
+        tempString += ' ' + num
     );
+    context.textAlign = "center";
+    context.fillText(tempString, 500, 130);
+    //bottom
+    tempString = '';
+    canvas_attributes.fingerPlacement.bottom.sort().forEach( num =>
+        tempString += ' ' + num
+    );
+    context.textAlign = "center";
+    context.fillText(tempString, 500, 950);
+    //left
+    //left and right calculate a starting spot and add text going down in intrivals
+    let tempCount = 1;
+    let startingPoint = 400 - 40 * (canvas_attributes.fingerPlacement.left.length - 1);
+    canvas_attributes.fingerPlacement.left.sort().forEach( num => {
+        context.fillText(num, 90, startingPoint + 100 * tempCount);
+        tempCount += 1;
+    });
+    //right
+    tempCount = 1;
+    startingPoint = 400 - 40 * (canvas_attributes.fingerPlacement.right.length - 1);
+    canvas_attributes.fingerPlacement.right.sort().forEach( num => {
+        context.fillText(num, 910, startingPoint + 100 * tempCount);
+        tempCount += 1;
+    });
 
+}
+
+//Updates everything when Finger Placement options are clicked (expluding checkboxes)
+function fingerPlaceBtnUpdate() {
+    //update buttoms
+    let boxes = document.getElementById('thumbFinger');
+    //location box - drop down value, trim in case of extra space, and lower caser it (ex. 'top', 'bottom')
+    let loca = document.getElementById('dropdownFingerSide').innerText.trim().toLowerCase();
+    //see if it is left or not
+    let left = document.getElementById('radFingerSideLeft').checked;
+    //canvas_attributes.fingerPlacement[loca]
+    if (left) {
+        document.getElementById('thumbFinger').checked = canvas_attributes.fingerPlacement[loca].includes(1);
+        document.getElementById('indexFinger').checked = canvas_attributes.fingerPlacement[loca].includes(2);
+        document.getElementById('middleFinger').checked = canvas_attributes.fingerPlacement[loca].includes(3);
+        document.getElementById('ringFinger').checked = canvas_attributes.fingerPlacement[loca].includes(4);
+        document.getElementById('pinkyFinger').checked = canvas_attributes.fingerPlacement[loca].includes(5);
+    } else  {
+        document.getElementById('thumbFinger').checked = canvas_attributes.fingerPlacement[loca].includes(6);
+        document.getElementById('indexFinger').checked = canvas_attributes.fingerPlacement[loca].includes(7);
+        document.getElementById('middleFinger').checked = canvas_attributes.fingerPlacement[loca].includes(8);
+        document.getElementById('ringFinger').checked = canvas_attributes.fingerPlacement[loca].includes(9);
+        document.getElementById('pinkyFinger').checked = canvas_attributes.fingerPlacement[loca].includes(10);
+    }
+    updateCanvas();
+
+}
+
+function updateFingerPlace(event, num) {
+    let loca = document.getElementById('dropdownFingerSide').innerText.trim().toLowerCase();
+    let left = document.getElementById('radFingerSideLeft').checked;
+    let attr = canvas_attributes.fingerPlacement[loca];
+
+    if (event.target.checked) {
+    //add num if on left, otherwise it is right which the corresponding finger is the left's number plus 5
+        left ? attr.push(num): attr.push(num + 5);
+        console.log(attr);
+    } else {
+        console.log('goodbye');
+        left ? attr.splice(attr.indexOf(num, 1)): attr.splice(attr.indexOf(num + 5, 1));
+    }
+    updateCanvas();
+    console.log('what????')
 }

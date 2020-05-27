@@ -81,39 +81,39 @@
               </button>
               <br /> <br />
               <div class="radio">
-                <label><input type="radio" id="radFingerSideLeft" name="radFingerSide" checked> Left Hand</label>
+                <label><input onclick="fingerPlaceBtnUpdate()" type="radio" id="radFingerSideLeft" name="radFingerSide" checked> Left Hand</label>
               </div>
               <div class="radio">
-                <label><input type="radio" id="radFingerSideRight" name="radFingerSide"> Right Hand</label>
+                <label><input onclick="fingerPlaceBtnUpdate()" type="radio" id="radFingerSideRight" name="radFingerSide"> Right Hand</label>
               </div>
 
 
               <div class="dropdown-menu" aria-labelledby="dropdownFingerSide">
-                <a class="dropdown-item" onclick="setPacketSideButton(event)">Top</a>
-                <a class="dropdown-item" onclick="setPacketSideButton(event)">Left</a>
-                <a class="dropdown-item" onclick="setPacketSideButton(event)">Right</a>
-                <a class="dropdown-item" onclick="setPacketSideButton(event)">Bottom</a>
+                <a class="dropdown-item" onclick="setPacketSideButton(event);fingerPlaceBtnUpdate();">Top</a>
+                <a class="dropdown-item" onclick="setPacketSideButton(event);fingerPlaceBtnUpdate();">Left</a>
+                <a class="dropdown-item" onclick="setPacketSideButton(event);fingerPlaceBtnUpdate();">Right</a>
+                <a class="dropdown-item" onclick="setPacketSideButton(event);fingerPlaceBtnUpdate();">Bottom</a>
               </div>
             </div>
             <br />
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="thumbFinger">
-            <label class="custom-control-label" for="thumbFinger" onclick="evt = event">Thumb</label>
+            <input type="checkbox" class="custom-control-input" id="thumbFinger" onclick="updateFingerPlace(event, 1)">
+            <label class="custom-control-label" for="thumbFinger" >Thumb</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="indexFinger">
+            <input type="checkbox" class="custom-control-input" id="indexFinger" onclick="updateFingerPlace(event, 2)">
             <label class="custom-control-label" for="indexFinger">Index</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="middleFinger">
+            <input type="checkbox" class="custom-control-input" id="middleFinger" onclick="updateFingerPlace(event, 3)">
             <label class="custom-control-label" for="middleFinger">Middle</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="ringFinger">
+            <input type="checkbox" class="custom-control-input" id="ringFinger" onclick="updateFingerPlace(event, 4)">
             <label class="custom-control-label" for="top-ringringFinger">Ring</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="pinkyFinger">
+            <input type="checkbox" class="custom-control-input" id="pinkyFinger" onclick="updateFingerPlace(event, 5)">
             <label class="custom-control-label" for="pinkyFinger">Pinky</label>
           </div>
         </div>
@@ -126,7 +126,7 @@
         <div class="align-images">
         <div class="div_pickup" ondrop="drop(event)" ondragover="allowDrop(event)">
           <!--img src="packets/nullPacket.png" class="generatedPicture" draggable="true" ondragstart="drag(event)" width="100%"-->
-          <canvas id="newPacket" width="100%" height="100%" class="generatedPicture" draggable="true" ondragstart="drag(event)"></canvas>
+          <canvas id="newPacket" width="1000" height="1000" class="generatedPicture" draggable="true" ondragstart="drag(event)"></canvas>
         </div>
         <div class="div_pickup delete-box" ondrop="drop(event)" ondragover="allowDrop(event)">
           <img src="packets/delete.png" class="deletePacket" draggable="true" ondragstart="drag(event)" width="100%" alt="Delete packet by dropping here">
